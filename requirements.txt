@@ -1,0 +1,8 @@
+# TscForge runtime dependencies (minimum supported versions)
+# Author: 晨星 (CJX0712)
+numpy>=2.0
+scikit-learn>=1.5.0
+
+# Optional Tier-0 backends (graceful degrade if absent / blocked download)
+aeon==1.6.0
+tslearn==0.9.0

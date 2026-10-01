@@ -1,0 +1,60 @@
+# TscForge project configuration
+# Author: 晨星 (CJX0712)
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tscforge"
+version = "0.1.0"
+description = "TscForge: deterministic time series classification - TinyRocket + DTW prototype fusion (PRISM)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "晨星", email = "CJX0712@users.noreply.github.com" }]
+keywords = ["time-series", "classification", "rocket", "dtw", "deterministic"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=2.0",
+    "scikit-learn>=1.4",
+]
+
+[project.optional-dependencies]
+tier0 = ["aeon==1.6.0", "tslearn==0.9.0"]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.6"]
+
+[project.scripts]
+tscforge = "tscforge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tscforge*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [".venv", "venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q -W ignore::UserWarning"
+
+[tool.coverage.run]
+source = ["tscforge"]
+omit = ["tscforge/examples/*"]
+
+[tool.coverage.report]
+show_missing = true

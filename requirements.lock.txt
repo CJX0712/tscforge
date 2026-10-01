@@ -1,0 +1,9 @@
+# TscForge pinned dependency lock (verified on Windows 11 / Python 3.13.14)
+# Author: 晨星 (CJX0712)
+# Generated against the project virtual environment; freeze before release.
+numpy==2.3.5
+scikit-learn==1.9.1
+aeon==1.6.0
+tslearn==0.9.0
+numba==0.63.1
+scipy==1.17.1

@@ -1,0 +1,28 @@
+# venv
+venv/
+.venv/
+envs/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# local artifacts (keep benchmark.json under results/)
+results/*.log
+*.log
+*.tmp
+_tmp/
+*.bak
+
+# secrets / keys
+*.key
+*.pem
+.env
